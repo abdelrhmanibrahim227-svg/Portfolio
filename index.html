@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Abdulrahman Al-Fakhrani - IT Support Specialist, Network Engineer and Web Developer. Founder of GLOBAL EARTH & SMART WEB SYSTEM."
+    />
+    <meta
+      name="keywords"
+      content="Abdulrahman Al-Fakhrani, IT Support, Network Engineer, Network Installation, CCTV Installation, Computer Maintenance, Web Developer, PHP, SQL, Python, Egypt"
+    />
+    <meta name="author" content="Abdulrahman Al-Fakhrani" />
+
+    <!-- Open Graph / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Abdulrahman Al-Fakhrani | IT Support & Network Engineer"
+    />
+    <meta
+      property="og:description"
+      content="IT Support Specialist, Network Engineer and Web Developer. Founder of GLOBAL EARTH & SMART WEB SYSTEM."
+    />
+    <meta property="og:image" content="images/Abdo.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Abdulrahman Al-Fakhrani | IT Support & Network Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="IT Support Specialist, Network Engineer and Web Developer. Founder of GLOBAL EARTH & SMART WEB SYSTEM."
+    />
+    <meta name="twitter:image" content="images/Abdo.jpg" />
+
+    <title>Abdulrahman Al-Fakhrani | IT Support & Network Engineer</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --bg-primary: #0a0e27;
+        --bg-secondary: #151932;
+        --bg-tertiary: #1e2140;
+        --text-primary: #e6e6e6;
+        --text-secondary: #a0a0a0;
+        --accent-primary: #64ffda;
+        --accent-secondary: #f06292;
+        --code-green: #7ee787;
+        --code-blue: #79c0ff;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+      }
+
+      body {
+        min-width: 320px;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      img { max-width: 100%; }
+
+      section[id] { scroll-margin-top: 5rem; }
+
+      /* ---------- Custom cursor (desktop / mouse only) ---------- */
+      .cursor,
+      .cursor-follower {
+        display: none;
+        position: fixed;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        border-radius: 50%;
+        z-index: 9999;
+        mix-blend-mode: difference;
+      }
+      .cursor {
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--accent-primary);
+        transition: transform 0.1s ease;
+      }
+      .cursor-follower {
+        width: 40px;
+        height: 40px;
+        background: rgba(100, 255, 218, 0.1);
+        transition: transform 0.25s ease;
+        z-index: 9998;
+      }
+      @media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+        .cursor,
+        .cursor-follower { display: block; }
+      }
+
+      /* ---------- Gradient text ---------- */
+      .gradient-text {
+        background: linear-gradient(270deg, #b6e5f2, #7daeeb, #7dcceb);
+        background-size: 600% 600%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: auroraShift 8s ease infinite;
+      }
+      @keyframes auroraShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      /* ---------- Typing cursor ---------- */
+      .typing-cursor {
+        display: inline-block;
+        width: 3px;
+        height: 1.5rem;
+        vertical-align: middle;
+        background: var(--code-green);
+        animation: blink 1s steps(2) infinite;
+      }
+      @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+      }
+
+      /* ---------- Particles ---------- */
+      .particle {
+        position: absolute;
+        background: var(--accent-primary);
+        border-radius: 50%;
+        opacity: 0.25;
+        pointer-events: none;
+        animation: float 15s linear infinite;
+      }
+      @keyframes float {
+        0% { transform: translateY(100vh) translateX(0); }
+        100% { transform: translateY(-100px) translateX(100px); }
+      }
+
+      /* ---------- Loader ---------- */
+      #loader {
+        position: fixed;
+        inset: 0;
+        background: var(--bg-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 60;
+        padding: 1rem;
+      }
+      .loader-progress {
+        height: 100%;
+        background: var(--accent-primary);
+        width: 0;
+        animation: loading 2s ease-in-out forwards;
+      }
+      @keyframes loading {
+        0% { width: 0; }
+        100% { width: 100%; }
+      }
+
+      /* ---------- Scrollbar ---------- */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: var(--bg-primary); }
+      ::-webkit-scrollbar-thumb {
+        background: var(--accent-primary);
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover { background: var(--accent-secondary); }
+
+      /* ---------- Header ---------- */
+      #header { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+      #header.scrolled {
+        background-color: rgba(10, 14, 39, 0.97);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+      }
+      #header nav { transition: padding 0.3s ease; }
+      #header.scrolled nav { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+
+      .nav-link { position: relative; }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent-primary);
+        transition: width 0.3s;
+      }
+      .nav-link:hover::after { width: 100%; }
+
+      /* ---------- Mobile menu ---------- */
+      #mobileMenu {
+        width: min(20rem, 86vw);
+        overflow-y: auto;
+        transform: translateX(-100%);
+        visibility: hidden;
+        transition: transform 0.3s ease-in-out, visibility 0.3s;
+      }
+      #mobileMenu.active {
+        transform: translateX(0);
+        visibility: visible;
+      }
+
+      /* ---------- Section headings ---------- */
+      .section-title {
+        position: relative;
+        display: inline-block;
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        margin-bottom: 2.5rem;
+      }
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 3rem;
+        height: 2px;
+        background: var(--accent-primary);
+      }
+      .sub-title {
+        position: relative;
+        display: inline-block;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      .sub-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 3rem;
+        height: 2px;
+        background: var(--accent-primary);
+      }
+
+      /* ---------- Profile photo ---------- */
+      .profile-wrap {
+        width: min(100%, 20rem);
+        aspect-ratio: 1 / 1;
+      }
+      .circle {
+        background: linear-gradient(135deg, #64ffda33, #79c0ff33);
+        border: 2px solid rgba(100, 255, 218, 0.35);
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        overflow: hidden;
+        animation: morph 10s linear infinite;
+      }
+      .circle img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      @keyframes morph {
+        0%, 100% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%; }
+        34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+        67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+      }
+
+      /* ---------- Skill list (About) ---------- */
+      .check-list li {
+        position: relative;
+        padding-left: 2rem;
+      }
+      .check-list li::before {
+        content: "\f00c";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 0.1rem;
+        color: var(--code-green);
+      }
+
+      /* ---------- Project cards ---------- */
+      .project-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-width: 0;
+        background: var(--bg-secondary);
+        border-radius: 0.5rem;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(100, 255, 218, 0.2);
+      }
+      .project-thumb {
+        height: 15rem;
+        overflow: hidden;
+        background: linear-gradient(135deg, #1e2140, #151932);
+      }
+      .project-thumb img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .project-card:hover .project-thumb img { transform: scale(1.05); }
+      .project-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 1.5rem;
+      }
+      .project-body p { overflow-wrap: anywhere; }
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin: 1.25rem 0;
+      }
+      .tag {
+        max-width: 100%;
+        background: var(--code-blue);
+        color: #000;
+        padding: 0.2rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.8rem;
+        line-height: 1.4;
+      }
+      .project-footer {
+        margin-top: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.25rem;
+        padding-top: 0.5rem;
+      }
+
+      /* ---------- Skill cards ---------- */
+      .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1.25rem 0.5rem;
+        font-size: 1.05rem;
+        transition: transform 0.3s ease;
+      }
+      .skill-item:hover { transform: translateY(-5px); }
+      .skill-icon {
+        font-size: clamp(2.25rem, 6vw, 3rem);
+        color: var(--accent-primary);
+      }
+
+      /* ---------- Contact ---------- */
+      .contact-item {
+        min-width: 0;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+      .contact-item:hover { transform: translateY(-5px); }
+      .contact-item p { overflow-wrap: anywhere; }
+
+      /* ---------- Scroll reveal (single system) ---------- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ---------- Hero ---------- */
+      #home h1 {
+        font-size: clamp(2.15rem, 7vw, 4.5rem);
+        line-height: 1.12;
+        overflow-wrap: anywhere;
+      }
+      #typingText { overflow-wrap: anywhere; }
+
+      @media (max-width: 767px) {
+        #home .hero-sub { font-size: clamp(1.05rem, 4.5vw, 1.4rem); }
+        .project-thumb { height: 12.5rem; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+        .reveal { opacity: 1 !important; transform: none !important; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Loading Screen -->
+    <div id="loader" aria-hidden="true">
+      <div class="text-center">
+        <div class="text-xl sm:text-2xl text-[#64ffda] mb-4">
+          Abdulrahman Al-Fakhrani...
+        </div>
+        <div class="w-48 h-1 bg-[#1e2140] rounded overflow-hidden mx-auto">
+          <div class="loader-progress"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-follower" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header
+      id="header"
+      class="fixed top-0 w-full bg-[rgba(10,14,39,0.9)] backdrop-blur-md z-40"
+    >
+      <nav
+        class="flex justify-between items-center py-4 px-5 md:px-10 max-w-7xl mx-auto min-h-16"
+      >
+        <a
+          href="#home"
+          class="font-bold text-[#64ffda] no-underline text-base sm:text-xl md:text-2xl"
+          >&lt;/Abdulrahman Al-Fakhrani&gt;</a
+        >
+
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex list-none">
+          <li class="ml-8">
+            <a href="#home" class="nav-link text-[#e6e6e6] no-underline transition-colors duration-300 hover:text-[#64ffda]">Home</a>
+          </li>
+          <li class="ml-8">
+            <a href="#about" class="nav-link text-[#e6e6e6] no-underline transition-colors duration-300 hover:text-[#64ffda]">About</a>
+          </li>
+          <li class="ml-8">
+            <a href="#projects" class="nav-link text-[#e6e6e6] no-underline transition-colors duration-300 hover:text-[#64ffda]">Projects</a>
+          </li>
+          <li class="ml-8">
+            <a href="#skills" class="nav-link text-[#e6e6e6] no-underline transition-colors duration-300 hover:text-[#64ffda]">Skills</a>
+          </li>
+          <li class="ml-8">
+            <a href="#contact" class="nav-link text-[#e6e6e6] no-underline transition-colors duration-300 hover:text-[#64ffda]">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+          id="menuToggle"
+          aria-label="Open menu"
+          class="bg-transparent border-none text-[#e6e6e6] text-2xl cursor-pointer md:hidden"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div
+      id="mobileMenu"
+      class="fixed top-0 left-0 h-full bg-[#151932] z-50 md:hidden"
+      aria-hidden="true"
+    >
+      <div class="p-4">
+        <div class="flex justify-between items-center mb-8 gap-3">
+          <a href="#home" class="text-lg font-bold text-[#64ffda] no-underline">&lt;/Abdulrahman Al-Fakhrani&gt;</a>
+          <button
+            id="closeMenu"
+            aria-label="Close menu"
+            class="bg-transparent border-none text-[#e6e6e6] text-2xl cursor-pointer"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <ul class="list-none">
+          <li class="mb-6">
+            <a href="#home" class="text-[#e6e6e6] no-underline text-lg transition-colors duration-300 hover:text-[#64ffda] block"><i class="fas fa-home mr-3"></i> Home</a>
+          </li>
+          <li class="mb-6">
+            <a href="#about" class="text-[#e6e6e6] no-underline text-lg transition-colors duration-300 hover:text-[#64ffda] block"><i class="fas fa-user mr-3"></i> About</a>
+          </li>
+          <li class="mb-6">
+            <a href="#projects" class="text-[#e6e6e6] no-underline text-lg transition-colors duration-300 hover:text-[#64ffda] block"><i class="fas fa-briefcase mr-3"></i> Projects</a>
+          </li>
+          <li class="mb-6">
+            <a href="#skills" class="text-[#e6e6e6] no-underline text-lg transition-colors duration-300 hover:text-[#64ffda] block"><i class="fas fa-cogs mr-3"></i> Skills</a>
+          </li>
+          <li class="mb-6">
+            <a href="#contact" class="text-[#e6e6e6] no-underline text-lg transition-colors duration-300 hover:text-[#64ffda] block"><i class="fas fa-envelope mr-3"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Overlay for mobile menu -->
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-28 pb-16"
+    >
+      <div
+        id="particles"
+        class="absolute inset-0 overflow-hidden z-10"
+        aria-hidden="true"
+      ></div>
+      <div class="text-center z-20 max-w-4xl w-full">
+        <h1 class="mb-4 gradient-text font-bold md:font-medium tracking-tighter md:tracking-tight">
+          Abdulrahman Al-Fakhrani
+        </h1>
+        <div class="hero-sub text-2xl md:text-3xl mb-8 text-[#7ee787] min-h-[2.5rem]">
+          <span id="typingText"></span><span class="typing-cursor" aria-hidden="true"></span>
+        </div>
+        <div class="flex justify-center mt-8">
+          <a
+            href="files/Abdo.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 md:px-6 py-2 md:py-3 border-2 border-[#64ffda] bg-transparent text-[#64ffda] no-underline rounded text-base md:text-lg transition-all duration-300 hover:bg-[#64ffda] hover:text-[#0a0e27]"
+            >View Resume</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-5 md:px-10 max-w-7xl mx-auto">
+      <h2 class="section-title reveal">About Me</h2>
+
+      <div class="flex flex-col w-full items-center justify-center reveal">
+        <a
+          href="images/Abdo.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="profile-wrap block circle"
+        >
+          <img src="images/Abdo.jpg" alt="Abdulrahman Al-Fakhrani" />
+        </a>
+        <div class="text-center space-y-2 md:space-y-3 mt-6">
+          <h3 class="text-2xl sm:text-3xl text-[#64ffda]">Abdulrahman Al-Fakhrani</h3>
+          <p class="text-lg sm:text-xl text-[#79c0ff]">IT Support / Network Engineer</p>
+          <p class="text-lg sm:text-xl text-[#f06292]">
+            <i class="fa-solid fa-location-dot"></i> Al-Mahalla Al-Kubra, Al-Gharbia
+          </p>
+        </div>
+      </div>
+
+      <p class="reveal mt-8 max-w-4xl">
+        IT Specialist and Founder of GLOBAL EARTH &amp; SMART WEB SYSTEM.
+        Experienced in technical support, computer maintenance, network
+        installation and configuration, hardware and software solutions, and
+        system development. Skilled in troubleshooting technical issues,
+        managing IT infrastructure, and developing websites and management
+        systems. Passionate about delivering innovative technology solutions
+        that help businesses grow, improve performance, and achieve digital
+        transformation.
+      </p>
+
+      <div class="reveal">
+        <h4 class="mt-8 mb-4 font-semibold text-xl text-white">Skills &amp; Expertise:</h4>
+        <ul class="check-list space-y-3 text-base list-none max-w-4xl">
+          <li>Supplying and selling the latest computers, laptops, monitors, mobile phones and cameras</li>
+          <li>Installing and configuring switches and access points</li>
+          <li>Setting up and preparing internet networks for companies and organizations</li>
+          <li>Installing and configuring CCTV surveillance systems and securing facilities</li>
+          <li>Installing operating systems and software on computers and laptops</li>
+          <li>Maintaining computers and laptops and resolving technical issues</li>
+          <li>Assembling computers and upgrading their components</li>
+          <li>Providing IT support and periodic maintenance services for companies</li>
+          <li>Designing and developing websites using PHP, SQL and Python</li>
+          <li>Developing software solutions and managing databases</li>
+          <li>Delivering complete technology solutions for companies and individuals</li>
+        </ul>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="mt-16">
+        <h3 class="sub-title reveal">Work Experience</h3>
+
+        <div class="relative border-l border-[#64ffda]/40 pl-8 space-y-12">
+          <div class="relative reveal">
+            <span class="absolute -left-[41px] top-2 w-4 h-4 bg-[#64ffda] rounded-full"></span>
+            <p class="text-lg sm:text-xl font-medium text-[#64ffda]">
+              Al-Quds Al-Sharif Hospital – El Mahalla El Kubra
+            </p>
+            <p class="text-base text-gray-300">IT Specialist | Technical Support</p>
+            <p class="text-sm text-gray-400">3 Years of Experience</p>
+          </div>
+
+          <div class="relative reveal">
+            <span class="absolute -left-[41px] top-2 w-4 h-4 bg-[#64ffda] rounded-full"></span>
+            <p class="text-lg sm:text-xl font-medium text-[#64ffda]">
+              SORTECH – Company Management Software
+            </p>
+            <p class="text-base text-gray-300">Account Manager</p>
+            <p class="text-sm text-gray-400">1 Year of Experience</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="mt-16">
+        <h3 class="sub-title reveal">Education</h3>
+
+        <div class="relative border-l border-[#64ffda]/40 pl-8">
+          <div class="relative reveal">
+            <span class="absolute -left-[41px] top-2 w-4 h-4 bg-[#64ffda] rounded-full"></span>
+            <p class="text-lg sm:text-xl font-medium text-[#64ffda]">Mansoura University</p>
+            <p class="text-base text-gray-300">Faculty of Computers and Information</p>
+            <p class="text-base text-gray-300">Department of Information Technology (IT)</p>
+            <p class="text-sm text-gray-400">Graduate – Class of 2026</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-5 md:px-10 max-w-7xl mx-auto">
+      <h2 class="section-title reveal">Projects</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- SMART CLINIC -->
+        <article class="project-card reveal">
+          <div class="project-thumb">
+            <img src="images/smart-clinic.jpg" alt="SMART CLINIC Hospital Management System" loading="lazy" onerror="this.style.display='none'" />
+          </div>
+          <div class="project-body">
+            <h3 class="text-xl mb-2 text-[#64ffda]">SMART CLINIC</h3>
+            <p class="text-[#a0a0a0]">
+              An integrated Hospital Management System designed to streamline
+              healthcare operations, manage patient records, organize medical
+              services, and improve administrative and financial workflows.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Hospital Management System</span>
+              <span class="tag">Patient Management</span>
+              <span class="tag">Doctor Management</span>
+              <span class="tag">Medical Records</span>
+              <span class="tag">Appointment Management</span>
+              <span class="tag">Accounting &amp; Finance</span>
+              <span class="tag">Queue Management</span>
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML &amp; CSS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- GLOBAL Store -->
+        <article class="project-card reveal">
+          <div class="project-thumb">
+            <img src="images/global-store.jpg" alt="GLOBAL Store E-Commerce Platform" loading="lazy" onerror="this.style.display='none'" />
+          </div>
+          <div class="project-body">
+            <h3 class="text-xl mb-2 text-[#64ffda]">GLOBAL Store</h3>
+            <p class="text-[#a0a0a0]">
+              A modern and fully integrated e-commerce platform designed to
+              provide a seamless online shopping experience. GLOBAL Store
+              allows customers to explore products, manage shopping carts,
+              place orders, apply discount coupons, and make secure payments.
+              It also provides advanced seller dashboards and administrative
+              tools for managing products, inventory, orders, and online
+              stores.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Next.js</span>
+              <span class="tag">React.js</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Redux Toolkit</span>
+              <span class="tag">Prisma ORM</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Stripe Payment</span>
+              <span class="tag">Cash on Delivery</span>
+              <span class="tag">JWT Authentication</span>
+              <span class="tag">Seller Dashboard</span>
+              <span class="tag">Admin Dashboard</span>
+              <span class="tag">Order Management</span>
+              <span class="tag">Product Management</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- RIHLA -->
+        <article class="project-card reveal">
+          <div class="project-thumb">
+            <img src="images/rihla.jpg" alt="RIHLA Travel Platform" loading="lazy" onerror="this.style.display='none'" />
+          </div>
+          <div class="project-body">
+            <h3 class="text-xl mb-2 text-[#64ffda]">RIHLA – Travel Platform</h3>
+            <p class="text-[#a0a0a0]">
+              An integrated Umrah and travel platform for exploring
+              destinations, booking travel packages, managing reservations, and
+              connecting customers with travel services.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Laravel</span>
+              <span class="tag">PHP</span>
+              <span class="tag">Filament</span>
+              <span class="tag">Livewire</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Booking System</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://www.facebook.com/share/1A6RdNzsPR/" target="_blank" rel="noopener noreferrer" aria-label="RIHLA on Facebook" class="text-[#79c0ff] hover:text-[#64ffda] transition-colors">
+                <i class="fab fa-facebook text-3xl"></i>
+              </a>
+              <a href="https://wa.me/201143002582" target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp" class="text-[#25D366] hover:scale-110 transition-transform">
+                <i class="fab fa-whatsapp text-3xl"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SMART WEB -->
+        <article class="project-card reveal">
+          <div class="project-thumb">
+            <img src="images/smart-web.jpg" alt="SMART WEB Software Solutions" loading="lazy" onerror="this.style.display='none'" />
+          </div>
+          <div class="project-body">
+            <h3 class="text-xl mb-2 text-[#64ffda]">SMART WEB</h3>
+            <p class="text-[#a0a0a0]">
+              SMART WEB is a software development company specializing in
+              designing and developing websites, management systems, and
+              customized digital solutions. We transform ideas into powerful
+              software that helps businesses grow and succeed.
+            </p>
+            <div class="tag-list">
+              <span class="tag">SMART CLINIC</span>
+              <span class="tag">GLOBAL Store</span>
+              <span class="tag">ORVANTA HR</span>
+              <span class="tag">Web Development</span>
+              <span class="tag">Custom Software</span>
+              <span class="tag">Management Systems</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://www.facebook.com/share/1A6RdNzsPR/" target="_blank" rel="noopener noreferrer" aria-label="SMART WEB on Facebook" class="text-[#79c0ff] hover:text-[#64ffda] transition-colors">
+                <i class="fab fa-facebook text-3xl"></i>
+              </a>
+              <a href="https://wa.me/201143002582" target="_blank" rel="noopener noreferrer" aria-label="Contact SMART WEB on WhatsApp" class="text-[#25D366] hover:scale-110 transition-transform">
+                <i class="fab fa-whatsapp text-3xl"></i>
+              </a>
+              <span class="text-sm text-gray-300">01143002582</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- GLOBAL EARTH -->
+        <article class="project-card reveal">
+          <div class="project-thumb">
+            <img src="images/media.jpg" alt="GLOBAL EARTH IT Solutions" loading="lazy" onerror="this.style.display='none'" />
+          </div>
+          <div class="project-body">
+            <h3 class="text-xl mb-2 text-[#64ffda]">GLOBAL EARTH</h3>
+            <p class="text-[#a0a0a0]">
+              GLOBAL EARTH is a complete Information Technology (IT) company
+              offering a comprehensive range of advanced technical solutions,
+              from supplying and selling laptops, computers, cameras, monitors
+              and mobile phones, to installing surveillance and camera systems
+              and setting up internet networks for companies and organizations.
+              We provide the latest technologies and the best solutions at the
+              highest levels of quality and professionalism, helping
+              individuals and businesses keep pace with technological progress
+              and get the most out of technology.
+            </p>
+            <div class="tag-list">
+              <span class="tag">IT Solutions</span>
+              <span class="tag">Computer Maintenance</span>
+              <span class="tag">Network Installation</span>
+              <span class="tag">CCTV Installation</span>
+              <span class="tag">Internet Solutions</span>
+              <span class="tag">Laptop &amp; Computer Sales</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 px-5 md:px-10 max-w-7xl mx-auto">
+      <h2 class="section-title reveal">Skills</h2>
+
+      <div class="space-y-8 text-center">
+        <div class="bg-[#151932] rounded-lg p-5 sm:p-8 md:p-10 reveal">
+          <h3 class="text-2xl mb-4 text-[#64ffda]">🌐 Networking &amp; Infrastructure</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mt-6">
+            <div class="skill-item"><i class="fas fa-network-wired skill-icon"></i>Switches</div>
+            <div class="skill-item"><i class="fas fa-wifi skill-icon"></i>Access Points</div>
+            <div class="skill-item"><i class="fas fa-server skill-icon"></i>Network Setup</div>
+            <div class="skill-item"><i class="fas fa-video skill-icon"></i>CCTV Systems</div>
+          </div>
+        </div>
+
+        <div class="bg-[#151932] rounded-lg p-5 sm:p-8 md:p-10 reveal">
+          <h3 class="text-2xl mb-4 text-[#64ffda]">🛠️ IT Support &amp; Hardware</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mt-6">
+            <div class="skill-item"><i class="fas fa-screwdriver-wrench skill-icon"></i>Computer Maintenance</div>
+            <div class="skill-item"><i class="fas fa-desktop skill-icon"></i>OS &amp; Software Installation</div>
+            <div class="skill-item"><i class="fas fa-microchip skill-icon"></i>PC Assembly &amp; Upgrades</div>
+            <div class="skill-item"><i class="fas fa-headset skill-icon"></i>Technical Support</div>
+          </div>
+        </div>
+
+        <div class="bg-[#151932] rounded-lg p-5 sm:p-8 md:p-10 reveal">
+          <h3 class="text-2xl mb-4 text-[#64ffda]">⚙️ Web Development &amp; Databases</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mt-6">
+            <div class="skill-item"><i class="fab fa-php skill-icon"></i>PHP</div>
+            <div class="skill-item"><i class="fas fa-database skill-icon"></i>SQL</div>
+            <div class="skill-item"><i class="fab fa-python skill-icon"></i>Python</div>
+            <div class="skill-item"><i class="fab fa-react skill-icon"></i>React / Next.js</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-5 md:px-10 max-w-7xl mx-auto">
+      <h2 class="section-title reveal">Contact</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 reveal">
+        <!-- Call -->
+        <a href="tel:+201143002582" class="contact-item bg-[#151932] rounded-lg p-6 flex items-center gap-4 hover:bg-[#1e2140] group">
+          <div class="w-12 h-12 shrink-0 bg-[#1e2140] rounded-full flex items-center justify-center text-[#64ffda] text-xl group-hover:bg-[#64ffda] group-hover:text-[#151932] transition-colors duration-300">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="min-w-0">
+            <h4 class="text-[#64ffda] mb-1">Call</h4>
+            <p class="text-[#a0a0a0] group-hover:text-[#64ffda]">01143002582</p>
+          </div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:abdelrhmanibrahim227@gmail.com" class="contact-item bg-[#151932] rounded-lg p-6 flex items-center gap-4 hover:bg-[#1e2140] group">
+          <div class="w-12 h-12 shrink-0 bg-[#1e2140] rounded-full flex items-center justify-center text-[#64ffda] text-xl group-hover:bg-[#64ffda] group-hover:text-[#151932] transition-colors duration-300">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="min-w-0">
+            <h4 class="text-[#64ffda] mb-1">Email</h4>
+            <p class="text-[#a0a0a0] group-hover:text-[#64ffda]">abdelrhmanibrahim227@gmail.com</p>
+          </div>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/201143002582" target="_blank" rel="noopener noreferrer" class="contact-item bg-[#151932] rounded-lg p-6 flex items-center gap-4 hover:bg-[#1e2140] group">
+          <div class="w-12 h-12 shrink-0 bg-[#1e2140] rounded-full flex items-center justify-center text-[#64ffda] text-xl group-hover:bg-[#64ffda] group-hover:text-[#151932] transition-colors duration-300">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="min-w-0">
+            <h4 class="text-[#64ffda] mb-1">WhatsApp</h4>
+            <p class="text-[#a0a0a0] group-hover:text-[#64ffda]">01143002582</p>
+          </div>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-item bg-[#151932] rounded-lg p-6 flex items-center gap-4 hover:bg-[#1e2140] group">
+          <div class="w-12 h-12 shrink-0 bg-[#1e2140] rounded-full flex items-center justify-center text-[#64ffda] text-xl group-hover:bg-[#64ffda] group-hover:text-[#151932] transition-colors duration-300">
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <div class="min-w-0">
+            <h4 class="text-[#64ffda] mb-1">LinkedIn</h4>
+            <p class="text-[#a0a0a0] group-hover:text-[#64ffda]">linkedin.com/in/</p>
+          </div>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/share/19unyskKcW/" target="_blank" rel="noopener noreferrer" class="contact-item bg-[#151932] rounded-lg p-6 flex items-center gap-4 hover:bg-[#1e2140] group">
+          <div class="w-12 h-12 shrink-0 bg-[#1e2140] rounded-full flex items-center justify-center text-[#64ffda] text-xl group-hover:bg-[#64ffda] group-hover:text-[#151932] transition-colors duration-300">
+            <i class="fab fa-facebook"></i>
+          </div>
+          <div class="min-w-0">
+            <h4 class="text-[#64ffda] mb-1">Facebook</h4>
+            <p class="text-[#a0a0a0] group-hover:text-[#64ffda]">Abdulrahman Al-Fakhrani</p>
+          </div>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/3bdoelfakhrany/" target="_blank" rel="noopener noreferrer" class="contact-item bg-[#151932] rounded-lg p-6 flex items-center gap-4 hover:bg-[#1e2140] group">
+          <div class="w-12 h-12 shrink-0 bg-[#1e2140] rounded-full flex items-center justify-center text-[#64ffda] text-xl group-hover:bg-[#64ffda] group-hover:text-[#151932] transition-colors duration-300">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="min-w-0">
+            <h4 class="text-[#64ffda] mb-1">Instagram</h4>
+            <p class="text-[#a0a0a0] group-hover:text-[#64ffda]">instagram.com/3bdoelfakhrany</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#151932] py-8 px-5 md:px-10 text-center">
+      <div class="flex justify-center gap-4 mb-4 text-lg">
+        <a href="https://github.com/" aria-label="GitHub" class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#e6e6e6] no-underline transition-all duration-300 hover:bg-[#64ffda] hover:text-[#0a0e27] hover:-translate-y-1.5" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/" aria-label="LinkedIn" class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#e6e6e6] no-underline transition-all duration-300 hover:bg-[#64ffda] hover:text-[#0a0e27] hover:-translate-y-1.5" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/3bdoelfakhrany/" aria-label="Instagram" class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#e6e6e6] no-underline transition-all duration-300 hover:bg-[#64ffda] hover:text-[#0a0e27] hover:-translate-y-1.5" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/201143002582" aria-label="WhatsApp" class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#e6e6e6] no-underline transition-all duration-300 hover:bg-[#64ffda] hover:text-[#0a0e27] hover:-translate-y-1.5" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <p>&copy; 2026 Abdulrahman Al-Fakhrani. All rights reserved.</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <a
+      href="#home"
+      id="scrollTop"
+      aria-label="Scroll to top"
+      class="fixed bottom-5 right-5 w-12 h-12 bg-[#64ffda] rounded-full flex items-center justify-center text-[#0a0e27] no-underline opacity-0 invisible transition-all duration-300 z-30 hover:bg-[#f06292] hover:-translate-y-1.5"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
+
+    <script>
+      const $ = (s) => document.querySelector(s);
+      const $$ = (s) => Array.from(document.querySelectorAll(s));
+
+      const loader = $("#loader"),
+        cursor = $(".cursor"),
+        follower = $(".cursor-follower"),
+        menuToggle = $("#menuToggle"),
+        mobileMenu = $("#mobileMenu"),
+        closeMenuBtn = $("#closeMenu"),
+        overlay = $("#overlay"),
+        scrollTopBtn = $("#scrollTop"),
+        header = $("#header"),
+        typingText = $("#typingText"),
+        particlesWrap = $("#particles");
+
+      /* ===== Loader ===== */
+      function hideLoader() {
+        if (!loader || loader.dataset.done) return;
+        loader.dataset.done = "1";
+        loader.style.transition = "opacity 0.5s ease";
+        loader.style.opacity = "0";
+        setTimeout(() => (loader.style.display = "none"), 600);
+      }
+      if (document.readyState === "complete") hideLoader();
+      else window.addEventListener("load", hideLoader);
+      setTimeout(hideLoader, 3500); // safety fallback
+
+      /* ===== Custom Cursor ===== */
+      if (cursor && follower) {
+        document.addEventListener("mousemove", (e) => {
+          cursor.style.left = e.clientX + "px";
+          cursor.style.top = e.clientY + "px";
+          follower.style.left = e.clientX + "px";
+          follower.style.top = e.clientY + "px";
+        });
+        ["mousedown", "mouseup"].forEach((evt) =>
+          document.addEventListener(evt, () => {
+            const scale = evt === "mousedown" ? "scale(0.85)" : "scale(1)";
+            cursor.style.transform = `translate(-50%,-50%) ${scale}`;
+            follower.style.transform = `translate(-50%,-50%) ${scale}`;
+          })
+        );
+      }
+
+      /* ===== Mobile Menu ===== */
+      function openMenu() {
+        mobileMenu.classList.add("active");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        overlay.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+      function closeMenu() {
+        mobileMenu.classList.remove("active");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        overlay.classList.add("hidden");
+        document.body.style.overflow = "";
+      }
+      menuToggle?.addEventListener("click", openMenu);
+      closeMenuBtn?.addEventListener("click", closeMenu);
+      overlay?.addEventListener("click", closeMenu);
+      $$("#mobileMenu a").forEach((a) => a.addEventListener("click", closeMenu));
+
+      /* ===== Typing effect ===== */
+      if (typingText) {
+        const texts = [
+          "Installing & configuring switches",
+          "Installing & configuring access points",
+          "Setting up internet networks",
+          "Installing operating systems on PCs & laptops",
+          "Installing software & applications",
+          "Website development",
+          "Building websites with PHP",
+          "Working with SQL databases",
+          "Programming with Python",
+          "Designing & developing systems and applications",
+          "Database management",
+          "Developing software solutions for companies",
+        ];
+        let ti = 0,
+          ci = 0,
+          isDeleting = false;
+        (function typeLoop() {
+          const cur = texts[ti];
+          typingText.textContent = isDeleting
+            ? cur.substring(0, --ci)
+            : cur.substring(0, ++ci);
+          if (!isDeleting && ci === cur.length) {
+            isDeleting = true;
+            setTimeout(typeLoop, 2000);
+          } else if (isDeleting && ci === 0) {
+            isDeleting = false;
+            ti = (ti + 1) % texts.length;
+            setTimeout(typeLoop, 500);
+          } else setTimeout(typeLoop, isDeleting ? 40 : 80);
+        })();
+      }
+
+      /* ===== Particles ===== */
+      (function genParticles() {
+        if (!particlesWrap) return;
+        const count = window.innerWidth < 768 ? 25 : 50;
+        for (let i = 0; i < count; i++) {
+          const p = document.createElement("div");
+          p.className = "particle";
+          const size = Math.random() * 5 + 1;
+          p.style.width = size + "px";
+          p.style.height = size + "px";
+          p.style.left = Math.random() * 100 + "%";
+          p.style.top = Math.random() * 100 + "%";
+          p.style.animationDelay = Math.random() * 10 + "s";
+          particlesWrap.appendChild(p);
+        }
+      })();
+
+      /* ===== Header + scroll-to-top ===== */
+      function onScroll() {
+        header.classList.toggle("scrolled", window.scrollY > 100);
+        if (window.scrollY > 400) {
+          scrollTopBtn.classList.add("opacity-100", "visible");
+          scrollTopBtn.classList.remove("opacity-0", "invisible");
+        } else {
+          scrollTopBtn.classList.remove("opacity-100", "visible");
+          scrollTopBtn.classList.add("opacity-0", "invisible");
+        }
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      /* ===== Smooth anchor scroll (header offset handled by CSS scroll-padding) ===== */
+      $$('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", function (e) {
+          const target = this.getAttribute("href");
+          if (!target || target === "#") return;
+          const el = document.querySelector(target);
+          if (!el) return;
+          e.preventDefault();
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+
+      /* ===== Scroll reveal (one observer for everything) ===== */
+      const revealEls = $$(".reveal");
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+        );
+        // small stagger for items sharing the same parent (e.g. project cards)
+        revealEls.forEach((el) => {
+          const siblings = Array.from(el.parentElement.children).filter((c) =>
+            c.classList.contains("reveal")
+          );
+          el.style.transitionDelay = (siblings.indexOf(el) % 3) * 0.1 + "s";
+          io.observe(el);
+        });
+      } else {
+        revealEls.forEach((el) => el.classList.add("visible"));
+      }
+    </script>
+  </body>
+</html>
